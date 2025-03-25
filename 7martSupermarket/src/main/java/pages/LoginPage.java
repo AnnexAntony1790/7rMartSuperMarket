@@ -19,9 +19,6 @@ public class LoginPage {
 	WebElement password;
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement signInButton;
-	@FindBy(xpath = "//li[text()='Dashboard']")
-	WebElement dashBoard;
-	@FindBy(xpath="//div[@class='alert alert-danger alert-dismissible']")WebElement alert;
 
 	public LoginPage enterUsernameAndPassword(String uname, String pwd) {
 		userName.sendKeys(uname);
@@ -34,13 +31,4 @@ public class LoginPage {
 		return new HomePage(driver);
 	}
 
-	public boolean isDashBoardDisplayed() {
-		return dashBoard.isDisplayed();
-	}
-	
-	public boolean isAlertDisplayed()
-	{
-		return alert.isDisplayed();
-	}
-	
 }

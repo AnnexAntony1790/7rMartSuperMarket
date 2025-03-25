@@ -10,7 +10,7 @@ import utilities.WaitUtility;
 
 public class HomePage {
 	public WebDriver driver;
-	WaitUtility waitUtility=new WaitUtility();
+	WaitUtility waitUtility = new WaitUtility();
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
@@ -21,9 +21,14 @@ public class HomePage {
 	WebElement admin;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/logout']")
 	WebElement logout;
-
 	@FindBy(xpath = "(//a[text()='More info '])[1]")
 	WebElement moreInfo;
+	@FindBy(xpath = "(//a[text()='More info '])[3]")
+	WebElement categoryMoreInfo;
+	@FindBy(xpath="(//a[text()='More info '])[4]")
+	WebElement subCategoryMoreInfo;
+	@FindBy(xpath="(//a[text()='More info '])[5]")
+	WebElement contactMoreInfo;
 
 	public HomePage clickOnAdmin() {
 		waitUtility.waitForElementToBeClicked(driver, admin);
@@ -36,9 +41,23 @@ public class HomePage {
 		return this;
 	}
 
-	public AdminUserPage clickOnMoreInfo() {
+	public AdminUserPage clickOnAdminUserMoreInfo() {
 		moreInfo.click();
 		return new AdminUserPage(driver);
 	}
+
+	public CategoryPage clickonCategoryMoreInfo() {
+		categoryMoreInfo.click();
+		return new CategoryPage(driver);
+	}
+	public AddNewSubCategoryPage clickonSubCategoryMoreInfo() {
+		subCategoryMoreInfo.click();
+		return new AddNewSubCategoryPage(driver);
+	}
+	public ContactUsPage clickonContactMoreInfo() {
+		contactMoreInfo.click();
+		return new ContactUsPage(driver);
+	}
+	
 
 }

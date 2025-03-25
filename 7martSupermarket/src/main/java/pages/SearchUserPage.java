@@ -21,14 +21,13 @@ public class SearchUserPage {
 	WebElement username;
 	@FindBy(xpath = "//button[@name='Search']")
 	WebElement searchUserButton;
-	
+
 	@FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody")
 	WebElement table;
 
 	@FindBys({ @FindBy(xpath = "//table[@class='table table-bordered table-hover table-sm']/tbody/tr/td[1]"), })
 	List<WebElement> columnUsername;
-	
-	
+
 	public SearchUserPage enterUsername(String un) {
 		username.sendKeys(un);
 		return this;
@@ -43,15 +42,14 @@ public class SearchUserPage {
 
 		for (WebElement element : columnUsername) {
 			if (element.getText().equals(uname)) {
-				System.out.println("Search Element Found:"+element.getText());
-			}			
+				System.out.println("Search Element Found:" + element.getText());
+			}
 		}
 		return this;
 	}
-	
+
 	public boolean isTableDisplayed() {
 		return table.isDisplayed();
 	}
-	
 
 }

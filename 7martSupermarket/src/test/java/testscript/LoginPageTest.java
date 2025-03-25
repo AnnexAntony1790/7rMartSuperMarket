@@ -1,34 +1,45 @@
 package testscript;
 
+import java.io.IOException;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import constants.Constant;
 import pages.HomePage;
 import pages.LoginPage;
+import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base {
 	HomePage home;
+
 	@Test
-	public void verifyUsercanLoginwithValidCredentials() {
+	public void verifyUsercanLoginwithValidCredentials() throws IOException {
+		String userName = ExcelUtility.getStringData(3, 0, "LoginPage");
+		String password = ExcelUtility.getStringData(3, 1, "LoginPage");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.enterUsernameAndPassword("admin", "admin");
-		
-		home=loginPage.clickOnSigninButton();
+		loginPage.enterUsernameAndPassword(userName, password);
+		home = loginPage.clickOnSigninButton();
 		String expected = driver.getTitle();
 		String actual = "Dashboard | 7rmart supermarket";
 		System.out.println("Title:" + driver.getTitle());
-		Assert.assertEquals(expected, actual, "DashBoard is not Loaded");
+		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
 	}
 
 	@Test
-	public void verifyUsercanLoginwithInvalidUsernameAndValidPwd() {
+	public void verifyUsercanLoginwithInvalidUsernameAndValidPwd() throws IOException {
+		// Excel Read Program
+		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
+		String password = ExcelUtility.getStringData(1, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsernameAndPassword("invaliduname", "admin");
+		loginpage.enterUsernameAndPassword(userName, password);
 		loginpage.clickOnSigninButton();
-		boolean isDashBoardDisplayed = loginpage.isDashBoardDisplayed();
-		Assert.assertTrue(isDashBoardDisplayed, "DashBoard is not loaded");
+		String expected = driver.getTitle();
+		String actual = "Dashboard | 7rmart supermarket";
+		System.out.println("Title:" + driver.getTitle());
+		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
 	}
 
 	@Test
@@ -39,21 +50,20 @@ public class LoginPageTest extends Base {
 		loginPage.clickOnSigninButton();
 		String expected = driver.getTitle();
 		String actual = "Dashboard | 7rmart supermarket";
-
 		System.out.println("Title:" + driver.getTitle());
-		System.out.println("Actual Title:" + actual);
-		Assert.assertEquals(expected, actual, "Dashboard is not loaded");
+		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
 
 	}
 
 	@Test(dataProvider = "credentials")
-	public void verifyUsercanLoginwithInvalidUsernameAndPassword(String uname, String pwd) {
+	public void verifyUsercanLoginwithDataProviders(String uname, String pwd) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsernameAndPassword(uname, pwd);
 		loginPage.clickOnSigninButton();
-		boolean isAlertDisplayed = loginPage.isAlertDisplayed();
-		System.out.println("Alert Displayed:" + isAlertDisplayed);
-		Assert.assertTrue(isAlertDisplayed, "Alert Message is not Displayed");
+		String expected = driver.getTitle();
+		String actual = "Dashboard | 7rmart supermarket";
+		System.out.println("Title:" + driver.getTitle());
+		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
 	}
 
 	@DataProvider(name = "credentials")

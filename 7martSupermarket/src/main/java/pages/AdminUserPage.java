@@ -16,10 +16,8 @@ public class AdminUserPage {
 
 	@FindBy(xpath = "//a[text()=' New']")
 	WebElement newButton;
-
 	@FindBy(xpath = "//a[@onclick='click_button(2)']")
 	WebElement searchButton;
-
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-warning']")
 	WebElement resetButton;
 	@FindBy(xpath = "(//a[@class='btn btn-sm btn btn-danger btncss'])[1]")
