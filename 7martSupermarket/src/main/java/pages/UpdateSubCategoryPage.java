@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import constants.Constant;
 import utilities.FileUploadUtility;
-import utilities.PageUtilities;
+import utilities.PageUtility;
 
 public class UpdateSubCategoryPage {
-	PageUtilities pageUtility=new PageUtilities();
+	PageUtility pageUtility=new PageUtility();
 	FileUploadUtility fileUpload=new FileUploadUtility();
 	public WebDriver driver;
 

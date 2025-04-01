@@ -12,7 +12,7 @@ public class FakerUtility {
 		Address address = faker.address();
 
 		String text = address.firstName();
-		
+
 		return text;
 
 	}
@@ -40,15 +40,27 @@ public class FakerUtility {
 
 	}
 
-	public String getFakeProductName() {
+	public String getFakeCategoryName() {
 
 		Faker faker = new Faker();
 
 		Address address = faker.address();
 
-		String text = faker.food().ingredient();		
-		
+		String text = faker.food().ingredient();
+
 		return text;
 
+	}
+
+	public String getFakeBookName() {
+		Faker faker = new Faker();
+		String text = faker.book().title();
+		return text;
+	}
+
+	public String getFakeArtistName() {
+		Faker faker = new Faker();
+		String text = faker.artist().name();
+		return text;
 	}
 }

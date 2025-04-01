@@ -10,13 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
-import utilities.PageUtilities;
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class AddNewUserPage {
 
 	public WebDriver driver;
-	PageUtilities pageUtilities = new PageUtilities();
+	PageUtility pageUtilities = new PageUtility();
 	WaitUtility waitUtility = new WaitUtility();
 
 	public AddNewUserPage(WebDriver driver) {

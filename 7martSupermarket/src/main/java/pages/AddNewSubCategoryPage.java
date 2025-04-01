@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 import constants.Constant;
 import utilities.FileUploadUtility;
-import utilities.PageUtilities;
+import utilities.PageUtility;
 
 public class AddNewSubCategoryPage {
-	PageUtilities pageUtility = new PageUtilities();
+	PageUtility pageUtility = new PageUtility();
 	FileUploadUtility fileUpload = new FileUploadUtility();
 	public WebDriver driver;
 
@@ -28,26 +28,30 @@ public class AddNewSubCategoryPage {
 	@FindBy(xpath = "//input[@id='main_img']")
 	WebElement chooseFile;
 	@FindBy(xpath = "//button[@type='submit']")
-	WebElement save;
+	WebElement saveSubCategory;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	WebElement alert;
 	@FindBy(xpath = "(//i[@class='fas fa-edit'])[2]")
 	WebElement editSubCategory;
 
-	public AddNewSubCategoryPage enterSubCategoryDetails() {
-		pageUtility.selectByVisibleText(categoryDropdown, "Toys");
-		subCategoryTextField.sendKeys("Bikes");
-		fileUpload.fileUploadforSendKey(chooseFile, Constant.IMAGEPATH);
+	public AddNewSubCategoryPage enterDetailsofSubCategory(String category,String subCategory) {
+		pageUtility.selectByVisibleText(categoryDropdown, category);
+		subCategoryTextField.sendKeys(subCategory);
 		return this;
 	}
 
+	public AddNewSubCategoryPage chooseFile()
+	{
+		fileUpload.fileUploadforSendKey(chooseFile, Constant.CATEGORYIMAGEPATH);
+		return this;
+	}
 	public AddNewSubCategoryPage clickOnAddNewSubCategory() {
 		addSubCategory.click();
 		return this;
 	}
 
-	public AddNewSubCategoryPage save() {
-		save.click();
+	public AddNewSubCategoryPage saveNewSubCategory() {
+		saveSubCategory.click();
 		return this;
 	}
 

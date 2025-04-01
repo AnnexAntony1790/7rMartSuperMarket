@@ -15,8 +15,6 @@ import utilities.ExcelUtility;
 
 public class UpdateSubCategoryPageTest extends Base {
 	ExcelUtility excelUtility = new ExcelUtility();
-	HomePage homePage;
-	CategoryPage categoryPage;
 	UpdateSubCategoryPage updateSubCategoryPage;
 
 	@Test
@@ -24,9 +22,8 @@ public class UpdateSubCategoryPageTest extends Base {
 		LoginPage loginPage = new LoginPage(driver);
 		String userName = excelUtility.getStringData(3, 0, "LoginPage");
 		String password = excelUtility.getStringData(3, 1, "LoginPage");
-		homePage = loginPage.enterUsernameAndPassword(userName, password).clickOnSigninButton();
-		updateSubCategoryPage = homePage.clickonSubCategoryMoreInfo().editSubCategory().updateDetails()
-				.updateSubCategory();
+		updateSubCategoryPage = loginPage.enterUsernameAndPassword(userName, password).clickOnSigninButton()
+				.clickonSubCategoryMoreInfo().editSubCategory().updateDetails().updateSubCategory();
 		boolean isAlertDisplayed = updateSubCategoryPage.isAlertDisplayed();
 		Assert.assertTrue(isAlertDisplayed, Constant.ERRORMESSAGEFORALERT);
 

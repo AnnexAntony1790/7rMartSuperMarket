@@ -25,10 +25,12 @@ public class HomePage {
 	WebElement moreInfo;
 	@FindBy(xpath = "(//a[text()='More info '])[3]")
 	WebElement categoryMoreInfo;
-	@FindBy(xpath="(//a[text()='More info '])[4]")
+	@FindBy(xpath = "(//a[text()='More info '])[4]")
 	WebElement subCategoryMoreInfo;
-	@FindBy(xpath="(//a[text()='More info '])[5]")
+	@FindBy(xpath = "(//a[text()='More info '])[5]")
 	WebElement contactMoreInfo;
+	@FindBy(xpath = "(//a[text()='More info '])[9]")
+	WebElement newsMoreInfo;
 
 	public HomePage clickOnAdmin() {
 		waitUtility.waitForElementToBeClicked(driver, admin);
@@ -50,14 +52,20 @@ public class HomePage {
 		categoryMoreInfo.click();
 		return new CategoryPage(driver);
 	}
+
 	public AddNewSubCategoryPage clickonSubCategoryMoreInfo() {
 		subCategoryMoreInfo.click();
 		return new AddNewSubCategoryPage(driver);
 	}
+
 	public ContactUsPage clickonContactMoreInfo() {
 		contactMoreInfo.click();
 		return new ContactUsPage(driver);
 	}
-	
+
+	public AddNewsPage clickOnNewsMoreInfo() {
+		newsMoreInfo.click();
+		return new AddNewsPage(driver);
+	}
 
 }

@@ -13,7 +13,6 @@ import utilities.ExcelUtility;
 
 public class UpdateContactUsPageTest extends Base {
 	ExcelUtility excelUtility = new ExcelUtility();
-	HomePage homePage;
 	ContactUsPage contactUsPage;
 
 	@Test

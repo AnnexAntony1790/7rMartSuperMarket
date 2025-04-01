@@ -24,7 +24,7 @@ public class AddCategoryPageTest extends Base {
 	public void verifyUsercanAddCategory() throws AWTException, IOException {
 		String userName = ExcelUtility.getStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(3, 1, "LoginPage");
-		String category = fakerUtility.getFakeProductName();
+		String category = fakerUtility.getFakeCategoryName();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsernameAndPassword(userName, password);
 		homePage = loginPage.clickOnSigninButton();

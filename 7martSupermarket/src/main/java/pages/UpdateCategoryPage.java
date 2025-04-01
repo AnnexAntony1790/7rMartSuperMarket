@@ -41,7 +41,7 @@ public class UpdateCategoryPage {
 	public UpdateCategoryPage editCategoryField() {
 		waitUtility.waitForElementToBeClicked(driver, categoryTextField);
 		categoryTextField.clear();
-		categoryTextField.sendKeys("JuiceMaker2");
+		categoryTextField.sendKeys("Juice Maker");
 		return this;
 	}
 
@@ -51,7 +51,7 @@ public class UpdateCategoryPage {
 	}
 
 	public UpdateCategoryPage deleteImage() {
-
+		waitUtility.waitForElementToBeClicked(driver, deleteImage);
 		deleteImage.click();
 		driver.switchTo().alert().accept();
 		return this;

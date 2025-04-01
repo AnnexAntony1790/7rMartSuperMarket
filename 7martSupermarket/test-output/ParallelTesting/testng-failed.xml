@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="classes" name="Failed suite [ParallelTesting]" guice-stage="DEVELOPMENT">
+  <parameter name="browsers" value="chrome"/>
+  <listeners>
+    <listener class-name="generatereport.Listeners"/>
+  </listeners>
+  <test thread-count="5" parallel="classes" name="ChromeTest(failed)">
+    <classes>
+      <class name="testscript.AddNewSubCategoryPageTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+          <include name="checkWhetherUserCanAddNewSubCategory"/>
+        </methods>
+      </class> <!-- testscript.AddNewSubCategoryPageTest -->
+      <class name="testscript.AddNewUserPageTest">
+        <methods>
+          <include name="verifyIfNewUserCanBeAdded"/>
+          <include name="beforeMethod"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.AddNewUserPageTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [ParallelTesting] -->

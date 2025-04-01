@@ -24,8 +24,9 @@ public class UpdateCategoryPageTest extends Base {
 		String userName = excelUtility.getStringData(3, 0, "LoginPage");
 		String password = excelUtility.getStringData(3, 1, "LoginPage");
 		homePage = loginPage.enterUsernameAndPassword(userName, password).clickOnSigninButton();
-		editCategory = homePage.clickonCategoryMoreInfo().clickOnEditCategory().editCategoryField().chooseFile().update();
-		boolean isAlertDisplayed=editCategory.isAlertDisplayed();
+		editCategory = homePage.clickonCategoryMoreInfo().clickOnEditCategory().deleteImage().chooseFile()
+				.editCategoryField().update();
+		boolean isAlertDisplayed = editCategory.isAlertDisplayed();
 		Assert.assertTrue(isAlertDisplayed, Constant.ERRORMESSAGEFORALERT);
 	}
 }

@@ -19,12 +19,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
 import utilities.FileUploadUtility;
-import utilities.PageUtilities;
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class AddCategoryPage {
 	public WebDriver driver;
-	PageUtilities pageUtilities = new PageUtilities();
+	PageUtility pageUtilities = new PageUtility();
 	FileUploadUtility fileUpload = new FileUploadUtility();
 	WaitUtility waitUtility = new WaitUtility();
 
@@ -72,7 +72,7 @@ public class AddCategoryPage {
 	public AddCategoryPage fileUpload() throws AWTException {
 
 		waitUtility.waitForElementToBeClicked(driver, chooseFile);
-		fileUpload.fileUploadforSendKey(chooseFile, Constant.PATH);
+		fileUpload.fileUploadforSendKey(chooseFile, Constant.CATEGORYIMAGEPATH);
 		return this;
 	}
 

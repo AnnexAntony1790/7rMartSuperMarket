@@ -28,7 +28,7 @@ public class LoginPageTest extends Base {
 		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
 	}
 
-	@Test
+	@Test(groups = {"smoke"})
 	public void verifyUsercanLoginwithInvalidUsernameAndValidPwd() throws IOException {
 		// Excel Read Program
 		String userName = ExcelUtility.getStringData(1, 0, "LoginPage");
@@ -47,6 +47,17 @@ public class LoginPageTest extends Base {
 	public void verifyUserCanLoginwithValidUsernameAndInvalidPwd(String uname, String pwd) {
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsernameAndPassword(uname, pwd);
+		loginPage.clickOnSigninButton();
+		String expected = driver.getTitle();
+		String actual = "Dashboard | 7rmart supermarket";
+		System.out.println("Title:" + driver.getTitle());
+		Assert.assertEquals(expected, actual, Constant.ERRORMESSAGEFORLOGIN);
+
+	}
+	@Test(retryAnalyzer = retry.RetryClass.class,groups = {"smoke"})
+		public void verifyUserCanLoginwithInValidCredentials() {
+		LoginPage loginPage = new LoginPage(driver);
+		loginPage.enterUsernameAndPassword("invalid", "invalid");
 		loginPage.clickOnSigninButton();
 		String expected = driver.getTitle();
 		String actual = "Dashboard | 7rmart supermarket";

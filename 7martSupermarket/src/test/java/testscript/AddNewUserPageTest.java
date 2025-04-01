@@ -19,14 +19,14 @@ public class AddNewUserPageTest extends Base {
 	HomePage homePage;
 	AdminUserPage adminUserPage;
 	AddNewUserPage newUserPage;
-	FakerUtility fakerUtility=new FakerUtility();	
+	FakerUtility fakerUtility = new FakerUtility();
 
 	@Test
 	public void verifyIfNewUserCanBeAdded() throws IOException {
 		String userName = ExcelUtility.getStringData(3, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(3, 1, "LoginPage");
 		String newUser = fakerUtility.getFakeFirstName();
-		String newPassword= fakerUtility.getPassword();
+		String newPassword = fakerUtility.getPassword();
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.enterUsernameAndPassword(userName, password);
 		homePage = loginPage.clickOnSigninButton();

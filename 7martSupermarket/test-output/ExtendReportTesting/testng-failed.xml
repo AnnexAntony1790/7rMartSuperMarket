@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [ExtendReportTesting]" guice-stage="DEVELOPMENT">
+  <parameter name="password" value="pass"/>
+  <parameter name="username" value="admin1"/>
+  <listeners>
+    <listener class-name="generatereport.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="parameterTest(failed)">
+    <classes>
+      <class name="testscript.HomePageTest">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="verifyWhetherUsercanLogout"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- testscript.HomePageTest -->
+    </classes>
+  </test> <!-- parameterTest(failed) -->
+</suite> <!-- Failed suite [ExtendReportTesting] -->
