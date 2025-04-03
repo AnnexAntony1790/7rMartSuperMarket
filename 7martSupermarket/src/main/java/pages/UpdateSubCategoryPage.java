@@ -10,7 +10,7 @@ import utilities.FileUploadUtility;
 import utilities.PageUtility;
 
 public class UpdateSubCategoryPage {
-	PageUtility pageUtility=new PageUtility();
+	PageUtility pageUtility;
 	FileUploadUtility fileUpload=new FileUploadUtility();
 	public WebDriver driver;
 

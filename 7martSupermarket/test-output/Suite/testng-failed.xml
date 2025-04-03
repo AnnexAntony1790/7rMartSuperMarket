@@ -9,25 +9,25 @@
   <test thread-count="5" name="ChromeTest(failed)">
     <parameter name="browsers" value="chrome"/>
     <classes>
-      <class name="testscript.LoginPageTest">
+      <class name="testscript.AddNewsPageTest">
         <methods>
-          <include name="verifyUserCanLoginwithValidUsernameAndInvalidPwd" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
+          <include name="checkWhetherUserCanAddNews"/>
         </methods>
-      </class> <!-- testscript.LoginPageTest -->
+      </class> <!-- testscript.AddNewsPageTest -->
     </classes>
   </test> <!-- ChromeTest(failed) -->
   <test thread-count="5" name="EdgeTest(failed)">
     <parameter name="browsers" value="edge"/>
     <classes>
-      <class name="testscript.LoginPageTest">
+      <class name="testscript.AddNewsPageTest">
         <methods>
-          <include name="verifyUserCanLoginwithValidUsernameAndInvalidPwd" invocation-numbers="0"/>
           <include name="beforeMethod"/>
           <include name="afterMethod"/>
+          <include name="checkWhetherUserCanAddNews"/>
         </methods>
-      </class> <!-- testscript.LoginPageTest -->
+      </class> <!-- testscript.AddNewsPageTest -->
     </classes>
   </test> <!-- EdgeTest(failed) -->
 </suite> <!-- Failed suite [Suite] -->

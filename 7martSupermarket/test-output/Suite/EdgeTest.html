@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Mar 29 15:52:57 IST 2025</td>
+<td>Started on:</td><td>Wed Apr 02 10:29:26 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>3 seconds (3835 ms)</td>
+<tr><td>Total time:</td><td>3 seconds (3568 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,20 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='testscript.LoginPageTest.verifyUserCanLoginwithValidUsernameAndInvalidPwd()'><b>verifyUserCanLoginwithValidUsernameAndInvalidPwd</b><br>Test class: testscript.LoginPageTest<br>Parameters: admin, 123</td>
-<td><div><pre>java.lang.AssertionError: Login is not Successful expected [Dashboard | 7rmart supermarket] but found [Login | 7rmart supermarket]
-	at testscript.LoginPageTest.verifyUserCanLoginwithValidUsernameAndInvalidPwd(LoginPageTest.java:54)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1779219567", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1779219567'><pre>java.lang.AssertionError: Login is not Successful expected [Dashboard | 7rmart supermarket] but found [Login | 7rmart supermarket]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at testscript.LoginPageTest.verifyUserCanLoginwithValidUsernameAndInvalidPwd(LoginPageTest.java:54)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+<td title='testscript.AddNewsPageTest.checkWhetherUserCanAddNews()'><b>checkWhetherUserCanAddNews</b><br>Test class: testscript.AddNewsPageTest</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;utilities.PageUtility.isalertDisplayed()&quot; because &quot;this.pageUtility&quot; is null
+	at testscript.AddNewsPageTest.checkWhetherUserCanAddNews(AddNewsPageTest.java:29)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace276556339", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace276556339'><pre>java.lang.NullPointerException: Cannot invoke &quot;utilities.PageUtility.isalertDisplayed()&quot; because &quot;this.pageUtility&quot; is null
+	at testscript.AddNewsPageTest.checkWhetherUserCanAddNews(AddNewsPageTest.java:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
@@ -98,7 +95,7 @@ function toggleAllBoxes() {
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
 	at org.testng.TestRunner.privateRun(TestRunner.java:739)
 	at org.testng.TestRunner.run(TestRunner.java:614)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
@@ -115,8 +112,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>testscript.LoginPageTest@1130520d</td></tr>
+<td>1</td>
+<td>testscript.AddNewsPageTest@383dc82c</td></tr>
 </table><p>
 </body>
 </html>

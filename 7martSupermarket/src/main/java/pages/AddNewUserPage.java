@@ -16,7 +16,7 @@ import utilities.WaitUtility;
 public class AddNewUserPage {
 
 	public WebDriver driver;
-	PageUtility pageUtilities = new PageUtility();
+	PageUtility pageUtilities;
 	WaitUtility waitUtility = new WaitUtility();
 
 	public AddNewUserPage(WebDriver driver) {
