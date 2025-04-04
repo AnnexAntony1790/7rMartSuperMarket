@@ -8,7 +8,12 @@
 	<test name="executeTest">
 		<classes>
 			<class name="testscript.AddCategoryPageTest">
-				</class>
+				<methods>
+					<include
+						name="verifyUsercanAddCategory">
+					</include>
+				</methods>
+			</class>
 		</classes>
 	</test>
 </suite>

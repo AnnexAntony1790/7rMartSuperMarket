@@ -149,7 +149,11 @@
   &lt;/listeners&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;executeTest&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;testscript.AddCategoryPageTest&quot;/&gt;
+      &lt;class name=&quot;testscript.AddCategoryPageTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;verifyUsercanAddCategory&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- testscript.AddCategoryPageTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- executeTest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
@@ -193,7 +197,7 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'verifyUsercanAddCategory')
 data.setCell(0, 2, 'testscript.AddCategoryPageTest')
-data.setCell(0, 3, 2751);
+data.setCell(0, 3, 2844);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -231,11 +235,11 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">verifyUsercanAddCategory</span>
-                <span class="method-start">2078 ms</span>
+                <span class="method-start">1972 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">afterMethod([TestResult name=verifyUsercanAddCategory status=SUCCESS method=AddCategoryPageTest.verifyUsercanAdd...)</span>
-                <span class="method-start">4834 ms</span>
+                <span class="method-start">4821 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
