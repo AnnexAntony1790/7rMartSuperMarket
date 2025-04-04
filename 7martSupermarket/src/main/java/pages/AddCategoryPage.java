@@ -77,9 +77,7 @@ public class AddCategoryPage {
 	}
 
 	public AddCategoryPage saveCategory() {
-		JavascriptExecutor javaExecutor = (JavascriptExecutor) driver;
-		javaExecutor.executeScript("window.scrollBy(0,1000)");// scroll down
-		javaExecutor.executeScript("arguments[0].click();", saveCategory);
+		pageUtilities.executeScript(saveCategory, driver);
 		return this;
 	}
 

@@ -1,5 +1,6 @@
 package utilities;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,6 +10,7 @@ import pages.HomePage;
 
 public class PageUtility {
 	public WebDriver driver;
+	JavascriptExecutor javaExecutor;
 
 	public void selectByVisibleText(WebElement element, String text) {
 		Select select = new Select(element);
@@ -20,7 +22,10 @@ public class PageUtility {
 		select.selectByIndex(value);
 	}
 
-	public boolean isalertDisplayed(WebDriver driver,WebElement element) {
-		return element.isDisplayed();
+	public void executeScript(WebElement element,WebDriver driver) {
+		JavascriptExecutor javaExecutor = (JavascriptExecutor) driver;
+		javaExecutor.executeScript("window.scrollBy(0,1000)");// scroll down
+		javaExecutor.executeScript("arguments[0].click();", element);
 	}
+
 }

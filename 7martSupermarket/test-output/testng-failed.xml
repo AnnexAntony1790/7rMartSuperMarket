@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="classes" name="Failed suite [ParallelClassSuite]" guice-stage="DEVELOPMENT">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <parameter name="browsers" value="chrome"/>
   <listeners>
     <listener class-name="generatereport.Listeners"/>
   </listeners>
-  <test thread-count="5" parallel="classes" name="ClassParallelTest(failed)">
+  <test thread-count="5" name="executeTest(failed)">
     <classes>
       <class name="testscript.AddCategoryPageTest">
         <methods>
@@ -14,13 +14,6 @@
           <include name="verifyUsercanAddCategory"/>
         </methods>
       </class> <!-- testscript.AddCategoryPageTest -->
-      <class name="testscript.DeleteUserPageTest">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="afterMethod"/>
-          <include name="verifyIfUserCanBeDeleted"/>
-        </methods>
-      </class> <!-- testscript.DeleteUserPageTest -->
     </classes>
-  </test> <!-- ClassParallelTest(failed) -->
-</suite> <!-- Failed suite [ParallelClassSuite] -->
+  </test> <!-- executeTest(failed) -->
+</suite> <!-- Failed suite [Suite] -->
